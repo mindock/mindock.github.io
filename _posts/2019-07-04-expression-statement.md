@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Expression Statement 차이"
-category:
+category: knowledge
 tags: [expression, statement]
 comments: false
 ---
