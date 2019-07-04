@@ -28,6 +28,8 @@ const stringArr: string[] = numberArr.map((num) => num.toString());
 
 **:bulb: 변수 선언할 때, 타입 정의하는 습관을 들이자!**
 
-**참고**  
+<br>
+
+**[참고]**  
 <https://www.typescriptlang.org/docs/handbook/type-inference.html>
 <https://www.tutorialsteacher.com/typescript/type-inference>
