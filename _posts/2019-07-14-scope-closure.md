@@ -19,18 +19,18 @@ comments: false
 
 - 해당 함수/블록에서만 사용할 수 있다.
 
-```
-let a = 123; // global scope
+```typescript
+let a = 123 // global scope
 
 {
-    let a = 456; // local scope;
-    let b = 789; // local scope;
+  let a = 456 // local scope;
+  let b = 789 // local scope;
 
-    console.log(a); // print 456
+  console.log(a) // print 456
 }
 
-console.log(a); //print 123;
-console.log(b); // error
+console.log(a) //print 123;
+console.log(b) // error
 ```
 
 1. function scope(함수 스코프)
@@ -43,38 +43,38 @@ console.log(b); // error
    - es5까지는 javascript에서 block scope을 사용할 수 없었다. var 키워드만 사용하기 때문에...
    - es6에서 **const, let** 도입되면서 block scope이 가능해졌다.
 
-```
+```typescript
 function example() {
-    const a = 'hello'; // function scope
+  const a = "hello" // function scope
 
-    if (true) {
-        const b = true; // block scope
-        console.log(b); // print true
-    }
+  if (true) {
+    const b = true // block scope
+    console.log(b) // print true
+  }
 
-    console.log(a); // print 'hello'
-    console.log(b); // error
+  console.log(a) // print 'hello'
+  console.log(b) // error
 }
 
-console.log(a); // error
+console.log(a) // error
 ```
 
 ## Closure
 
 - 자신의 scope 외부에 있는 변수에 접근할 수 있는 함수
 
-```
+```typescript
 function first() {
-    const pre = '내 이름은 ';
-    return function second(name) {
-        const post = '입니다.';
-        return pre + name + post;
-    }
+  const pre = "내 이름은 "
+  return function second(name) {
+    const post = "입니다."
+    return pre + name + post
+  }
 }
 
-const myNameIs = first();
-const mindock = myNameIs('mindock'); // 내 이름은 mindock입니다.
-const btob = myNameIs('BTOB'); // 내 이름은 BTOB입니다.
+const myNameIs = first()
+const mindock = myNameIs("mindock") // 내 이름은 mindock입니다.
+const btob = myNameIs("BTOB") // 내 이름은 BTOB입니다.
 ```
 
 위 예시를 보자!  

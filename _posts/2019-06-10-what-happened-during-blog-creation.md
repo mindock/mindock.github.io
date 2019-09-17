@@ -9,7 +9,7 @@ comments: false
 
 ## jekyll 개발환경에서 실행하는 방법
 
-```
+```bash
 bundle exec jekyll serve
 ```
 
@@ -23,7 +23,7 @@ bundle exec jekyll serve
   > windows에서 Jekyll 을 사용하는 것에 연관된 문제입니다.
   > 콘솔창의 코드 페이지를 UTF-8 로 변경해 문제를 해결한다.
 
-```
+```bash
 chcp 65001
 ```
 

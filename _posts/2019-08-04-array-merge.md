@@ -9,13 +9,13 @@ comments: false
 
 > concat, spread, push의 차이점
 
-```
-const arr: string[] = ['a', 'b', 'c'];
-const tempArr: string[] = ['d', 'e'];
+```typescript
+const arr: string[] = ["a", "b", "c"]
+const tempArr: string[] = ["d", "e"]
 
-const concatArr = arr.concat(tempArr);
-const spreadArr = [...arr, ...tempArr];
-arr.push(...tempArr);
+const concatArr = arr.concat(tempArr)
+const spreadArr = [...arr, ...tempArr]
+arr.push(...tempArr)
 ```
 
 두 개의 배열을 합치거나 하나의 원소를 추가해야하는 경우, `concat`, `spread`, `push` 중 어느 것을 사용해야할지 판단하기 어려운 경우가 있었다. 다 똑같은 작업을 하는 것 같은데 어떤 차이점이 있는지 각각 정리해보고자 한다.
@@ -24,13 +24,13 @@ arr.push(...tempArr);
 
 ### 1. concat
 
-```
-const a: number[] = [1, 2, 3];
-const b: number[] = [4, 5, 6];
-const c: number[] = [7, 8, 9];
+```typescript
+const a: number[] = [1, 2, 3]
+const b: number[] = [4, 5, 6]
+const c: number[] = [7, 8, 9]
 
-a.concat(b);
-const d = a.concat(c);
+a.concat(b)
+const d = a.concat(c)
 ```
 
 이 코드에서 d의 결과는? `[1, 2, 3, 7, 8, 9]` 이다.
@@ -38,8 +38,8 @@ const d = a.concat(c);
 
 `a.concat(b)`를 실행하면 `[1, 2, 3, 4, 5, 6]` 배열을 반환한다. 하지만, a 배열의 값을 바꾸는 것이 아니라 새로운 배열을 반환한다. 그렇기 때문에 a는 여전히 `[1, 2, 3]` 값을 가진 상태로 `a.concat(c)`를 실행해 d 값은 a와 c가 합쳐진 새로운 배열인 `[1, 2, 3, 7, 8, 9]`이 된다.
 
-```
-const e: number[] = a.concat(b, c, 10, [11, 12, 13]); // e = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+```typescript
+const e: number[] = a.concat(b, c, 10, [11, 12, 13]) // e = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 ```
 
 또한, 위와 같이 여러 배열을 이어 붙일 수 있다.
@@ -48,15 +48,15 @@ const e: number[] = a.concat(b, c, 10, [11, 12, 13]); // e = [1, 2, 3, 4, 5, 6, 
 
 ### 2. push
 
-```
-const zero: number[] = [0];
-const a: number[] = [1, 2, 3];
-const b: number[] = [4, 5, 6];
-const c: number[] = [7, 8, 9];
+```typescript
+const zero: number[] = [0]
+const a: number[] = [1, 2, 3]
+const b: number[] = [4, 5, 6]
+const c: number[] = [7, 8, 9]
 
-zero.push(a);
-a.push(...b);
-const d = a.push(...c);
+zero.push(a)
+a.push(...b)
+const d = a.push(...c)
 ```
 
 이 코드에서 d의 결과는? `9` 이다.
@@ -72,9 +72,9 @@ zero의 값은 `[0, [1, 2, 3]]`이 된다. 하지만, typescript에서는 number
 
 그렇다면, 마지막 문장 `a.push(...c)`를 실행한 후 a는 `[1, 2, 3, 4, 5, 6, 7, 8, 9]` 값을 가진다. 그런데 왜 d는 `9`라는 값을 가지게 된걸까? push는 배열 끝에 원소들을 추가하고 새로운 길이를 반환하기 때문에 a의 길이인 9를 반환한다.
 
-```
-zero.push(a);
-a.push(...b, ...c);
+```typescript
+zero.push(a)
+a.push(...b, ...c)
 ```
 
 혼자 막 코드를 써보다가 이상한 점을 발견했다.  
@@ -84,9 +84,9 @@ a.push(...b, ...c);
 
 하지만, 내 예상과는 다르게 zero에 push한 a 변수를 복사해서 사용한 것이 아니다. 같은 주소를 참조하고 있기 때문에 `zero.push(a)`만 실행했을 경우의 zero의 값과 `a.push(...b, ...c)`를 실행한 후의 zero의 값은 다르게 된다.
 
-```
-zero.push(a);
-a.push(...b, ...c, ...zero);
+```typescript
+zero.push(a)
+a.push(...b, ...c, ...zero)
 ```
 
 ![혼란의 카오스](/assets/images/array_push.jpeg)
@@ -97,13 +97,13 @@ a에 zero까지 push하면... a가 계속 나오는 매직을 볼 수 있다.
 
 ### 3. spread
 
-```
-const a: number[] = [1, 2, 3];
-const b: number[] = [4, 5, 6];
-const c: number[] = [7, 8, 9];
+```typescript
+const a: number[] = [1, 2, 3]
+const b: number[] = [4, 5, 6]
+const c: number[] = [7, 8, 9]
 
-[...a, ...b];
-const d = [...a, ...c];
+;[...a, ...b]
+const d = [...a, ...c]
 ```
 
 이 코드에서 d의 결과는? `[1, 2, 3, 7, 8, 9]`이다.

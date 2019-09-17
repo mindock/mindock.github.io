@@ -9,17 +9,17 @@ comments: false
 
 ## Type Inference(타입 추론)?
 
-```
-const bool = true;
-const num = 1;
+```typescript
+const bool = true
+const num = 1
 ```
 
 위 코드를 보면, bool, num 변수에 타입을 선언하지 않았다.  
 하지만, 초기화한 값을 통해 bool변수는 boolean형, num변수는 number형인 것을 추론할 수 있다.
 
-```
-const numberArr: number[] = [1, 2, 3, 4, 5];
-const stringArr: string[] = numberArr.map((num) => num.toString());
+```typescript
+const numberArr: number[] = [1, 2, 3, 4, 5]
+const stringArr: string[] = numberArr.map(num => num.toString())
 ```
 
 위 코드에서는 numberArr 변수는 number 배열 타입으로 선언했다.  
