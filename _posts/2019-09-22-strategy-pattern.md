@@ -233,3 +233,36 @@ public class MiniDuckSimulator {
 - 구성을 이용해 시스템을 만들면 유연성을 크게 향상시킬 수 있다.
   - 알고리즘군을 별도의 클래스의 집합으로 캡슐화할 수 있도록 만들어준다.
   - 실행시에 행동을 바꿀 수 있게 해준다.
+
+### 💪 조금 더 알아보기
+
+1. 상속(Inheritance)
+
+   - **is a 관계**
+   - '~는 ~이다.' 성립
+   - 수퍼클래스의 변수와 메소드를 서브클래스에서 호출할 수 있다.
+   - 강한 결합을 가진다.
+   - 수퍼클래스를 수정하면, 서브클래스에 영향을 준다.
+   - 서브클래스를 수정하면, 수퍼클래스엔 영향을 주지 않는다.
+   - 클래스를 확장해야 코드를 재사용할 수 있다.
+   - Java에서 다중 상속을 지원하지 않는다.
+   - 컴파일 타임에 정적으로 관계가 결정된다.
+   - ex) 학생은 사람이다.
+
+2. 구성(Composition)
+
+   - **has a 관계**
+   - '~는 ~를 가진다.' 성립
+   - 여러 클래스를 하나로 합쳐서 만들기 때문에 조각 프로그래밍이 편해진다.
+   - 수퍼클래스와 서브클래스는 서로 독립적이다.
+   - 런타임에 쉽게 변경 가능하다. = 유연성을 가진다.
+   - 코드를 확장하지 않고 코드를 재사용할 수 있다.
+   - 캡슐화 향상된다.
+   - ex) 학생은 책을 가지고 있다.
+
+## Reference
+
+- <https://m.blog.naver.com/PostView.nhn?blogId=lunatic918&logNo=156290730&proxyReferer=https%3A%2F%2Fwww.google.com%2F>
+- <https://eskeptor.tistory.com/51>
+- <https://code-examples.net/ko/q/249d38>
+- <https://javacan.tistory.com/entry/OO-Basic-4-Composition-Over-Inheritance>
