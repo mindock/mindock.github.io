@@ -43,8 +43,8 @@ null ?? undefined   // undefined
 만약 왼쪽이 null 또는 undefined가 아님이 판명되면, 오른쪽 표현식은 평가되지 않는다. 즉, 바로 왼쪽 표현식 결과 반환한다.
 
 ## || 와 ?? 차이 
-- **||**는 첫번째 참인(truthy) 값을 반환한다.
-- **??**는 첫번째 정의된(defined) 값을 반환한다.
+- `||`는 첫번째 참인(truthy) 값을 반환한다.
+- `??`는 첫번째 정의된(defined) 값을 반환한다.
 
 **[참고]**  
 <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator>
