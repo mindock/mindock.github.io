@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title: "연산자 ?? 와 || 차이"
+title: "Nullish coalescing operator(??)"
 category: typescript
 tags: [typescript, javascript]
 comments: false
