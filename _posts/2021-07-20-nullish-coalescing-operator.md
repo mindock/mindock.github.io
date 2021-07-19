@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title: "|| 와 ?? 차이"
+title: "연산자 ?? 와 || 차이"
 category: typescript
 tags: [typescript, javascript]
 comments: false
